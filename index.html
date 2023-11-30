@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document object Model</title>
+</head>
+
+<style>
+    body
+    {
+        background-color: aqua;
+        text-align: center;
+       
+    }
+
+    h2{
+        font-size: 200%;
+        text-decoration: underline;
+        
+    }
+
+    input
+    {
+        font-size: 1.5rem;
+        padding: .5rem;
+        
+        border: 2px solid rosybrown;
+    }
+
+    button
+    {
+        margin-top: 1rem;
+        padding: .5rem;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        
+    }
+
+    .result
+    {
+        
+        color: tomato;
+        font-size: 2rem;
+     
+
+    }
+
+    
+
+
+</style>
+
+
+<body>
+
+    
+    <section>
+        <h2>Basic Calulator</h2>
+        <div class="input">
+            <input type="number" id="inputOne" value=""  placeholder="Enter value 1">
+            <input type="number" id="inputTwo" value="" placeholder="Enter value 2">
+        </div>
+
+        <div class="button">
+
+            <button id="addition" onclick="addition()">Addition</button>
+
+            <button id="substraction" onclick="substraction()" >Substraction</button>
+
+            <button id="multiplication" onclick="multiplication()">Multiplication</button>
+
+            <button id="division" onclick="division()">Division</button>
+ 
+        </div>
+
+        <div class="result">
+            <h3>RESULT = <span id="result">0</span></h3>
+        </div>
+    </section>
+    
+</body>
+
+<script>
+
+    document.getElementsByTagName("h2")[0].style.color="Blue";
+
+
+    function addition()
+    {
+        if(inputOne.value&&inputTwo.value)
+        {
+
+        let addition=parseInt(inputOne.value)+ parseInt(inputTwo.value);
+        // console.log(addition);
+        result.innerText=addition
+        clearInput()
+        }
+
+        else{
+            alert("Please enter all the values")
+        }
+    }
+
+    
+
+    
+    function substraction()
+    {
+        if(inputOne.value&&inputTwo.value)
+        {
+
+        let substraction=parseInt(inputOne.value)- parseInt(inputTwo.value);
+        // console.log(addition);
+        result.innerText=substraction
+        clearInput()
+    }
+
+else{
+    alert("Please enter all the values")
+}
+    }
+
+   
+
+    
+    function multiplication()
+    {
+        if(inputOne.value && inputTwo.value)
+        {
+
+        let multiplication=parseInt(inputOne.value)* parseInt(inputTwo.value);
+        // console.log(addition);
+        result.innerText=multiplication
+        clearInput()
+        }
+
+        else
+        {
+            alert("Please enter all the values")
+        }
+    }
+
+    
+
+    
+    function division()
+    {
+        if(inputOne.value&&inputTwo.value)
+        {
+
+        let division=parseInt(inputOne.value)/ parseInt(inputTwo.value);
+        // console.log(addition);
+        result.innerText=division.toFixed(2)
+        clearInput()
+        }
+
+        else
+        {
+            alert("Please enter all the values")
+        }
+    }
+
+    function clearInput()
+    {
+        inputOne.value=""
+        inputTwo.value=""
+    }
+    
+
+
+    
+
+
+
+</script>
+
+</html>
